@@ -40,7 +40,7 @@ const Header = () => {
 
               <Link onClick={() => setIsOpen(false)} to="orders">Orders</Link>
               {/* Delete below link once logbook is ready */}
-              <Link onClick={() => setIsOpen(false)} to="/admin/dashboard">Admin Orders</Link>
+              {/* <Link onClick={() => setIsOpen(false)} to="/admin/dashboard">Admin Orders</Link> */}
               <button onClick={logoutHandler}>
                 <FaSignOutAlt />
               </button>
