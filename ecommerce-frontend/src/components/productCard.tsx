@@ -12,6 +12,9 @@ type ProductsProps = {
 const server = "jsjsjj";
 
 const ProductCard = ({productId, price, name, photo, stock, handler}: ProductsProps) => {
+  // temporary line of code which should be removed once we use 'productId' and 'stock' variable
+  console.log(productId, stock);
+  
   return (
     <div className="product-card">
         <img src={photo} alt={name} />

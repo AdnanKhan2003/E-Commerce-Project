@@ -1,8 +1,8 @@
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import AdminSidebar from "../AdminSidebar";
-import { OrderItem } from "../../../models/types";
-import { server } from "../../../redux/store";
+import AdminSidebar from "../../../components/admin/AdminSidebar";
+import { Order, OrderItem } from "../../../types/types";
+import { useState } from "react";
 
 const img =
   "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=804";
@@ -12,10 +12,12 @@ const orderItems: OrderItem[] = [
     name: "Puma Shoes",
     photo: img,
     id: "asdsaasdas",
+    productId: "asdsaasdas",
     quantity: 4,
     price: 2000,
   },
 ];
+
 
 const TransactionManagement = () => {
   const [order, setOrder] = useState({
@@ -33,6 +35,7 @@ const TransactionManagement = () => {
     total: 4000 + 200 + 0 - 1200,
     orderItems,
   });
+  const deleteHandler = () => {};
 
   const {
     name,
@@ -69,11 +72,11 @@ const TransactionManagement = () => {
 
           {orderItems.map((i) => (
             <ProductCard
-              key={i._id}
+              key={i.id}
               name={i.name}
-              photo={`${server}/${i.photo}`}
+              photo={`${i.photo}`}
               productId={i.productId}
-              _id={i._id}
+              id={i.id}
               quantity={i.quantity}
               price={i.price}
             />
